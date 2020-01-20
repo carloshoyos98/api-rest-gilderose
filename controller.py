@@ -1,13 +1,13 @@
 from flask import Flask
 from flask_restful import Resource, Api
-
+from resources.root import Root
 from resources.inventario import Inventario
 from config import *
 
 app = Flask(__name__)
 api = Api(app)
 
-# api.add_resource(Root, '/')
+api.add_resource(Root, '/')
 api.add_resource(Inventario, '/inventario')
 # api.add_resource(UpdateQuality, '/updateQuality')
 
